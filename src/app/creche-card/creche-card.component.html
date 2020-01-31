@@ -1,0 +1,9 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{crecheLight.fantasyName}}</h5><a href="" (click)="openDetail($event)">Detail</a>
+        <div id="inline-reset"></div>
+        <app-creche-data-content [creche]="crecheLight">
+        </app-creche-data-content>
+    </div>
+    <app-carousel [images]="crecheLight.images"></app-carousel>
+</div>

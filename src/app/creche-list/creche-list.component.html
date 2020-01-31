@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-6" *ngFor="let creche of creches">
+      <app-creche-card [onDetail]="openDetail" [crecheLight]="creche">
+      </app-creche-card>
+      <br>
+  </div>
+  <app-toasts></app-toasts>
+</div>

@@ -1,0 +1,36 @@
+<div *ngIf="creche" class="modal-header">
+    <h4 class="modal-title">{{creche.fantasyName}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <app-creche-data-content [creche]="creche">
+        <div class="row">
+            <div class="col-md-6 col-6">
+                <span>CNPJ</span>
+                <p class="card-text">{{creche.cnpj}}</p>
+            </div>
+            <div class="col-md-6 col-6">
+                <span>Address</span>
+                <p class="card-text">{{address.address}}</p>
+            </div>
+            <div class="col-md-6 col-6">
+                <span>Neighborhood</span>
+                <p class="card-text">{{address.neighborhood}}</p>
+            </div>
+            <div class="col-md-6 col-6">
+                <span>City</span>
+                <p class="card-text">{{address.city}}</p>
+            </div>
+        </div>
+    </app-creche-data-content>
+    <div *ngIf="creche.images">
+        <h4>Creche Images</h4>
+        <div id="align-carousel">
+            <app-carousel [images]="creche.images"></app-carousel>
+        </div>
+
+    </div>
+
+</div>

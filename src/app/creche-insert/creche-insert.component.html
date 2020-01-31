@@ -1,0 +1,58 @@
+<h1>Creche</h1>
+<form [formGroup]="crecheForm" (ngSubmit)="onSubmit(upload)">
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <label for="address">*Address</label>
+            <input type="text" class="form-control" formControlName="address">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="neighborhood">Neighborhood</label>
+            <input type="text" class="form-control" formControlName="neighborhood">
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="city">City</label>
+            <input type="text" class="form-control" formControlName="city">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <label for="value">*Value</label>
+            <input type="text" class="form-control" mask='dot_separator.2' formControlName="value">
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" mask='0{4}' formControlName="age">
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="toilets">Qtd toilets</label>
+            <input type="text" class="form-control" formControlName="toilets" mask='0{4}'>
+        </div>
+        <div class="col-md-3 mb-3">
+            <label for="dorms">Qtd dorms</label>
+            <input type="text" class="form-control" formControlName="dorms" mask='0{4}'>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <label for="owner">*Owner</label>
+            <input type="text" class="form-control" formControlName="owner">
+        </div>
+    </div>
+    <app-file-upload #upload [onCallback]="handleCallback" uploadTitle="Creche Images">
+    </app-file-upload>
+    <br>
+    <div class="row">
+        <div class="col-md-2 mb-3">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" formControlName="garage" id="idGarage">
+                <label class="form-check-label" for="idGarage">Garage</label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="mb-4">
+    <button [disabled]="!crecheForm.valid" class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
+</form>
+<app-toasts></app-toasts>
