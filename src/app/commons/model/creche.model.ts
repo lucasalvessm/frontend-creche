@@ -7,6 +7,7 @@ export class Creche {
     fantasyName: string;
     openingHours: string;
     price: Number;
+    cnpj: String;
 
     images: Array<{
         imageBase64: string
@@ -22,6 +23,7 @@ export class Creche {
         creche.openingHours = formValues.openingHours;
         creche.price = new Number(formValues.price);
         creche.images = crecheImages;
+        creche.cnpj = formValues.cnpj;
 
         const address = new Address;
         address.address = formValues.address;
