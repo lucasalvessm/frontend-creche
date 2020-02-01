@@ -15,7 +15,8 @@ export class CrecheDetailComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
-    this.address = this.creche.address ? this.creche.address : new Address;
+    console.log(this.creche);
+    this.address = this.creche.addressInfo ? this.creche.addressInfo : new Address;
   }
 
 }

@@ -18,16 +18,15 @@ export class CrecheInsertComponent implements OnInit {
   images: string[] = [];
 
   crecheForm = this.fb.group({
-    address: ['', Validators.required],
+    fantasyName: ['', Validators.required],
+    openingHours: ['', Validators.required],
+    price: ['', Validators.required],
+    activities: [''],
+    teachingMethod: [''],
+    cnpj: [''],
+    address: [''],
     city: [''],
-    value: ['', Validators.required],
-    age: [''],
-    owner: ['', Validators.required],
-    furnished: [''],
-    garage: [''],
-    toilets: [''],
-    neighborhood: [''],
-    dorms: ['']
+    neighborhood: ['']
   });
 
   constructor(
@@ -43,7 +42,7 @@ export class CrecheInsertComponent implements OnInit {
 
   onSubmit = (upload: FileUploadComponent) =>
     this.crecheService
-      .insert([Creche.fromForm(this.crecheForm.value, this.images)])
+      .insert(Creche.fromForm(this.crecheForm.value, this.images))
       .subscribe(
         () => {
           this.crecheForm.reset();

@@ -11,7 +11,7 @@ export class CrecheService {
 
     constructor(private httpClient: HttpClient) { }
 
-    insert = (crecheList: Creche[]): Observable<Creche> =>
+    insert = (crecheList: Creche): Observable<Creche> =>
         this.httpClient.post<Creche>(`${BACKEND}/${this.uri}`, crecheList);
 
     list = (): Observable<CrecheLight[]> =>
